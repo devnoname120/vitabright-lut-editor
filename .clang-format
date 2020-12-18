@@ -1,0 +1,7 @@
+﻿---
+BasedOnStyle: LLVM
+BinPackArguments: false
+AllowShortFunctionsOnASingleLine: None
+ColumnLimit: 100
+
+...
