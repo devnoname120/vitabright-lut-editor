@@ -28,7 +28,7 @@ set(VITA_ELF_NAME ${SHORT_NAME}.elf)
 add_executable(${VITA_ELF_NAME} main.c)
 
 target_link_libraries(${VITA_ELF_NAME}
-        vitabright_stub
+        vitabright_stub_weak
         vita2d
         SceDisplay_stub
         SceGxm_stub
