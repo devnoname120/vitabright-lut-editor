@@ -65,7 +65,6 @@ vita_create_vpk(${SHORT_NAME}.vpk ${VITA_TITLEID} ${SHORT_NAME}.self
         FILE resources/tv.jpg resources/tv.jpg
         )
 
-get_filename_component(psvitaipFilePath psvitaip.txt REALPATH)
 set(PSVITAIP 192.168.1.10)
 
 add_custom_target(send
