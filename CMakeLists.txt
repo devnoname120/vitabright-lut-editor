@@ -48,7 +48,14 @@ target_link_libraries(${VITA_ELF_NAME}
 
 vita_create_self(${SHORT_NAME}.self ${VITA_ELF_NAME} UNSAFE UNCOMPRESSED)
 vita_create_vpk(${SHORT_NAME}.vpk ${VITA_TITLEID} ${SHORT_NAME}.self
+        VERSION "01.10"
         NAME ${SHORT_NAME}
+
+        FILE sce_sys/icon0.png sce_sys/icon0.png
+        FILE sce_sys/livearea/contents/bg.png sce_sys/livearea/contents/bg.png
+        FILE sce_sys/livearea/contents/startup.png sce_sys/livearea/contents/startup.png
+        FILE sce_sys/livearea/contents/template.xml sce_sys/livearea/contents/template.xml
+
         FILE resources/colorbars.png resources/colorbars.png
         FILE resources/matrix.png resources/matrix.png
         FILE resources/tv.jpg resources/tv.jpg
