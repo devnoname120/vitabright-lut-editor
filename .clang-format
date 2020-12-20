@@ -2,6 +2,6 @@
 BasedOnStyle: LLVM
 BinPackArguments: false
 AllowShortFunctionsOnASingleLine: None
-ColumnLimit: 100
+ColumnLimit: 140
 
 ...
