@@ -16,6 +16,7 @@
 #define LUT_FILE_2 ("ux0:/tai/vitabright_lut.txt")
 static const int DECREMENT_FAST_THRESHOLD = 300 * 1000;
 
+int vitabrightReload();
 int vitabrightOledGetLevel();
 int vitabrightOledSetLevel(unsigned int level);
 int vitabrightOledGetLut(unsigned char oledLut[LUT_SIZE]);
@@ -123,6 +124,11 @@ int main() {
 #pragma ide diagnostic ignored "EndlessLoop"
   while (1) {
     sceCtrlPeekBufferPositive(0, &pad, 1);
+
+    if ((pad.buttons & SCE_CTRL_CIRCLE) && !(oldPad.buttons & SCE_CTRL_CIRCLE)) {
+      vitabrightReload();
+      vitabrightOledGetLut(oledLut);
+    }
 
     if ((pad.buttons & SCE_CTRL_CROSS) && !(oldPad.buttons & SCE_CTRL_CROSS))
       textureIndex = (textureIndex + 1) % (sizeof(textures) / sizeof(*textures));

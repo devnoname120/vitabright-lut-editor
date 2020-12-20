@@ -9,7 +9,7 @@ if (NOT DEFINED CMAKE_TOOLCHAIN_FILE)
 endif ()
 
 
-set(SHORT_NAME VitaBrightTool)
+set(SHORT_NAME vitabright-lut-editor)
 set(VITA_TITLEID VBRIGHTTL)
 
 project(${SHORT_NAME})
@@ -53,7 +53,7 @@ target_link_libraries(${VITA_ELF_NAME}
 vita_create_self(${SHORT_NAME}.self ${VITA_ELF_NAME} UNSAFE UNCOMPRESSED)
 vita_create_vpk(${SHORT_NAME}.vpk ${VITA_TITLEID} ${SHORT_NAME}.self
         VERSION "01.10"
-        NAME ${SHORT_NAME}
+        NAME "Vitabright Lut Editor"
 
         FILE sce_sys/icon0.png sce_sys/icon0.png
         FILE sce_sys/livearea/contents/bg.png sce_sys/livearea/contents/bg.png
