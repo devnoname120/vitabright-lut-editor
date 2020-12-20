@@ -11,11 +11,15 @@ endif ()
 
 set(SHORT_NAME VitaBrightTool)
 set(VITA_TITLEID VBRIGHTTL)
+
 project(${SHORT_NAME})
 include("${VITASDK}/share/vita.cmake" REQUIRED)
 
 set(ENV{PKG_CONFIG_PATH} "$ENV{VITASDK}/arm-vita-eabi/lib/pkgconfig")
 include(FindPkgConfig)
+
+# "-at 0x0E -m 0x10000" is for making it a sysapp.
+set(VITA_MAKE_FSELF_FLAGS "-at 0x0E -m 0x10000 ${VITA_MAKE_FSELF_FLAGS}")
 
 # Default build type
 if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
